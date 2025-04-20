@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Afrocan Foods Market</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            Cart <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <div class="shop-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <div class="filters mb-4">
+                <select class="form-select" id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="spices">Spices</option>
+                    <option value="grains">Grains</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="frozen foods">Frozen Foods</option>
+                    <option value="soups">Soups</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+<section class="products-section">
+    <div class="container">
+        <div class="row g-3">
+            <!-- Product Card 1 - Spices Category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/rodo.jpg" alt="African Red Pepper">
+                    <div class="product-info">
+                        <h3>Red Pepper</h3>
+                        <p>Hot red pepper</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="1" 
+                                data-product-name="African Red Pepper">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 - Spices Category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/jolspice.jpg" alt="Jollof Rice Spice Mix">
+                    <div class="product-info">
+                        <h3>Jollof Rice Spice Mix</h3>
+                        <p>Perfect blend for authentic Jollof rice</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="2" 
+                                data-product-name="Jollof Rice Spice Mix">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 - Grains Category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/poundo.jpg" alt="African Yam Flour">
+                    <div class="product-info">
+                        <h3>Yam Flour</h3>
+                        <p>Premium quality yam flour</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="3" 
+                                data-product-name="Yam Flour">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/moinmoin.png" alt="Beans Flour">
+                    <div class="product-info">
+                        <h3>Beans Flour</h3>
+                        <p>Premium quality beans flour</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="4" 
+                                data-product-name="Beans Flour">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 - Snacks Category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="snacks">
+                    <img src="images/pchips.png" alt="Plantain Chips">
+                    <div class="product-info">
+                        <h3>Plantain Chips</h3>
+                        <p>Crunchy plantain chips</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="5" 
+                                data-product-name="Plantain Chips">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5 - Frozen Foods Category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/softchicken.jpg" alt="soft chicken">
+                    <div class="product-info">
+                        <h3>Frozen Soft Chicken</h3>
+                        <p>Fresh soft chicken pieces</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="6" 
+                                data-product-name="Frozen Soft Chicken">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/mackerel.jpg" alt="mackerel">
+                    <div class="product-info">
+                        <h3>Frozen Mackerel</h3>
+                        <p>Fresh mackerels</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="7" 
+                                data-product-name="Frozen Mackerel">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/hardchicken.jpg" alt="hard chicken">
+                    <div class="product-info">
+                        <h3>Frozen Hard Chicken</h3>
+                        <p>Fresh hard chicken pieces</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="8" 
+                                data-product-name="Frozen Hard Chicken">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- More Spices Products -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/curry.jpeg" alt="African Curry Powder">
+                    <div class="product-info">
+                        <h3>Curry Powder</h3>
+                        <p>Traditional African curry blend</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="9" 
+                                data-product-name="African Curry Powder">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/thyme.jpg" alt="Thyme">
+                    <div class="product-info">
+                        <h3>Thyme</h3>
+                        <p>Strong flavor and aroma</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="10" 
+                                data-product-name="Thyme">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/spinach.jpeg" alt="spinach">
+                    <div class="product-info">
+                        <h3>Frozen Spinach</h3>
+                        <p>Freshly cut spinach</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="11" 
+                                data-product-name="Frozen Spinach">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Grains Products -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/rice.png" alt="African Rice">
+                    <div class="product-info">
+                        <h3>Rice</h3>
+                        <p>Premium long grain rice</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="12" 
+                                data-product-name="African Rice">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/oloyin.png" alt="African Rice">
+                    <div class="product-info">
+                        <h3>Honey Beans</h3>
+                        <p>Naturally sweet brown beans</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="13" 
+                                data-product-name="Honey Beans">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Snacks Products -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="snacks">
+                    <img src="images/chinchin.jpg" alt="Chin Chin">
+                    <div class="product-info">
+                        <h3>Chin Chin</h3>
+                        <p>Sweet and crunchy snack</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="14" 
+                                data-product-name="Chin Chin">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="snacks">
+                    <img src="images/kulikuli.jpg" alt="kulikuli">
+                    <div class="product-info">
+                        <h3>Kulikuli</h3>
+                        <p>Sweet and crunchy peanut snack</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="15" 
+                                data-product-name="Kulikuli">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Snacks Products -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="snacks">
+                    <img src="images/puffpuff.jpg" alt="Puff Puff Mix">
+                    <div class="product-info">
+                        <h3>Puff Puff Mix</h3>
+                        <p>Ready to make puff puff mix</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="16" 
+                                data-product-name="Puff Puff Mix">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="soups">
+                    <img src="images/egusi.png" alt="Egusi">
+                    <div class="product-info">
+                        <h3>Egusi (Melon Seeds)</h3>
+                        <p>Available in solid and grinded forms</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="17" 
+                                data-product-name="Egusi (Melon Seeds)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="soups">
+                    <img src="images/palmoil.jpg" alt="Palm Oil">
+                    <div class="product-info">
+                        <h3>Palm Oil</h3>
+                        <p>Available in 4L, 2L and 1L</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="18" 
+                                data-product-name="Palm Oil">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/crayfish.jpg" alt="Crayfish">
+                    <div class="product-info">
+                        <h3>Crayfish</h3>
+                        <p>Available in solid and grinded forms</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="19" 
+                                data-product-name="Crayfish">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="soups">
+                    <img src="images/ogbono.jpeg" alt="Crayfish">
+                    <div class="product-info">
+                        <h3>Ogbono</h3>
+                        <p>Available in solid and grinded forms</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="20" 
+                                data-product-name="Ogbono">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="soups">
+                    <img src="images/banga.jpg" alt="photo of palm cream">
+                    <div class="product-info">
+                        <h3>Banga (Palm Cream)</h3>
+                        <p>Available in 800g and 400g</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="21" 
+                                data-product-name="Banga (Palm Cream)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/knorchicken.jpg" alt="photo of knorr cubes">
+                    <div class="product-info">
+                        <h3>Knorr Chicken Cubes</h3>
+                        <p>Also available in smaller quantities</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="22" 
+                                data-product-name="Knorr Chicken Cubes">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="spices">
+                    <img src="images/iru.jpg" alt="photo of iru">
+                    <div class="product-info">
+                        <h3>Iru (Locust Beans)</h3>
+                        <p>key ingredient in West African soups</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="23" 
+                                data-product-name="Iru (Locust Beans)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/kenkey.jpg" alt="photo of kenkey">
+                    <div class="product-info">
+                        <h3>Frozen Kenkey</h3>
+                        <p>Sumptuous Ghanian staple</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="24" 
+                                data-product-name="Frozen Kenkey">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/ewedu.jpg" alt="photo of ewedu">
+                    <div class="product-info">
+                        <h3>Frozen Ewedu (Jute Leaves)</h3>
+                        <p>Yoruba delicacy</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="25" 
+                                data-product-name="Frozen Ewedu (Jute Leaves)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/goat.jpg" alt="photo of ewedu">
+                    <div class="product-info">
+                        <h3>Frozen Goat Meat</h3>
+                        <p>Available in different sizes</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="26" 
+                                data-product-name="Frozen Goat Meat">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/semovita.jpg" alt="photo of semovita">
+                    <div class="product-info">
+                        <h3>Semovita</h3>
+                        <p>Available in 4kg, 2kg and 1kg sizes</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="27" 
+                                data-product-name="Semovita">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/okra.jpg" alt="photo of okra">
+                    <div class="product-info">
+                        <h3>Frozen Okra</h3>
+                        <p>Available in whole and diced</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="28" 
+                                data-product-name="Frozen Okra">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/ugu.jpg" alt="photo of ugu">
+                    <div class="product-info">
+                        <h3>Frozen Ugu Leaves (Pumpkin)</h3>
+                        <p>Available in whole and diced</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="29" 
+                                data-product-name="Frozen Ugu Leaves (Pumpkin)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/tilapia.jpg" alt="photo of tilapia">
+                    <div class="product-info">
+                        <h3>Frozen Tilapia</h3>
+                        <p>Rich in vitamins and minerals</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="30" 
+                                data-product-name="Frozen Tilapia">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/amala.jpg" alt="photo of amala">
+                    <div class="product-info">
+                        <h3>Amala Yam Flour (Elubo)</h3>
+                        <p>Available in different sizes</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="31" 
+                                data-product-name="Amala Yam Flour (Elubo)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/pap.jpg" alt="photo of pap">
+                    <div class="product-info">
+                        <h3>Maize Flour (Pap)</h3>
+                        <p>Your fresh ogi/akamu</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="32" 
+                                data-product-name="Maize Flour (Pap)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/croaker.jpg" alt="photo of croaker">
+                    <div class="product-info">
+                        <h3>Croaker Fish</h3>
+                        <p>Available in different sizes</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="33" 
+                                data-product-name="Croaker Fish">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="frozen foods">
+                    <img src="images/ponmo.jpg" alt="photo of ponmo">
+                    <div class="product-info">
+                        <h3>Frozen Cow Skin (Ponmo)</h3>
+                        <p>Available in different sizes</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="34" 
+                                data-product-name="Frozen Cow Skin (Ponmo)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="grains">
+                    <img src="images/ijebu.jpg" alt="photo of garri ijebu">
+                    <div class="product-info">
+                        <h3>Garri Ijebu</h3>
+                        <p>Best eaten with peanuts/fried fish</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="35" 
+                                data-product-name="Garri Ijebu">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="product-card" data-category="snacks">
+                    <img src="images/gnut.jpg" alt="photo of groundnut">
+                    <div class="product-info">
+                        <h3>Roasted Groundnut</h3>
+                        <p>Crunchy and tasty</p>
+                        <button class="btn btn-primary btn-sm add-to-cart w-100" 
+                                data-product-id="36" 
+                                data-product-name="Roasted Groundnut">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items-container"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="checkoutBtn"><i class="fab fa-whatsapp me-2"></i>Checkout via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="addToCartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Success!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Item added to cart successfully!
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

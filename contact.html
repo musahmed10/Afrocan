@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Afrocan Foods Market</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Afrocan Foods Market</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            Cart <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Contact Header -->
+    <div class="contact-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="contact-info card p-4 mb-4">
+                        <h3 class="mb-4">Get in Touch</h3>
+                        <div class="contact-details mb-4">
+                            <p><i class="fas fa-map-marker-alt me-2"></i> 1-1022 Wyandotte St W, Windsor, ON</p>
+                            <p><i class="fas fa-phone me-2"></i> 289 788 3419</p>
+                            <p><i class="fas fa-envelope me-2"></i> afrocanfoodsmarket@gmail.com</p>
+                        </div>
+                        
+                        <div class="business-hours mb-4">
+                            <h4 class="mb-3"><i class="fas fa-clock me-2"></i>Business Hours</h4>
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between mb-2">
+                                    <span>Monday - Friday:</span>
+                                    <span>9:00 AM - 8:00 PM</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Saturday:</span>
+                                    <span>10:00 AM - 8:00 PM</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span>Sunday:</span>
+                                    <span>12:00 PM - 5:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="social-links mb-4">
+                            <h4 class="mb-3">Follow Us</h4>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-contact card p-4">
+                        <h4 class="mb-3">Send us a Message</h4>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="whatsappMessage" rows="4" 
+                                placeholder="Type your message here..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="sendWhatsAppMessage()">
+                            <i class="fab fa-whatsapp me-2"></i>Send via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems" class="cart-items-container"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="checkoutBtn"><i class="fab fa-whatsapp me-2"></i>Checkout via WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function sendWhatsAppMessage() {
+            const message = document.getElementById('whatsappMessage').value;
+            if (!message.trim()) {
+                alert('Please enter a message');
+                return;
+            }
+            const phoneNumber = '+12897883419';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+
